@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'users',
     'api_v0',
+    'api_v47',
 ]
 
 MIDDLEWARE = [
