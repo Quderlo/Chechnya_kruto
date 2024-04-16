@@ -1,5 +1,4 @@
 # Django project template
-Пустой проект на Django, призванный ускорить разработку веб-приложений.
 ## Dev:
 ```bash
 # git clone repo
