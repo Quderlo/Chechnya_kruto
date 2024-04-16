@@ -21,7 +21,10 @@ docker compose stop postgres
 python manage.py makemigrations
 python manage.py migrate
 # run project
-python manage.py runserver 8000 
+python manage.py runserver 8000
+
+# frontend server up
+npm run dev
 ```
 ### .env file:
 #### Ps. Стоит заметить, что имя базы данных, пользователя, пароль пользователя, хост и порт для подключения к базе данных доложны соблюдать с таковыми в из файла конфигурации `docker-compose.yml`
