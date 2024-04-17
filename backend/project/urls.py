@@ -12,4 +12,5 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('api/v0/', include('api_v0.urls')),
     path('', HomeStub.as_view(), name='homepage'),
+    path('user_api/', include('user_api.urls')),
 ]
