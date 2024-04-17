@@ -14,3 +14,6 @@ class PostSerializer(serializers.Serializer):
             'text',
             'create_date',
         )
+
+    def create(self, validated_data):
+        return Post.objects.create(**validated_data)
