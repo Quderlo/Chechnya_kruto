@@ -1,17 +1,17 @@
 version: "3.9"
 services:
   django:
-    build: .
+    build: backend/
     command: gunicorn project.wsgi:application --bind 0.0.0.0:8001
     #restart: always
     volumes:
-      - ./:/usr/src/app/
+      - ./backend/:/usr/src/app/
       - static_volume:/usr/src/app/static
       - media_volume:/usr/src/app/media
     ports:
       - 8001:8001
     env_file:
-      - ./.env.docker
+      - ./backend/.env.docker
     depends_on:
       - postgres
     networks:
