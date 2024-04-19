@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'users',
     'api_v0',
-    'user_api.apps.UserApiConfig'
 ]
 
 MIDDLEWARE = [
@@ -150,9 +149,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LOGOUT_REDIRECT_URL = "homepage"
-LOGIN_REDIRECT_URL = "homepage"
-LOGIN_URL = 'login'
+# LOGOUT_REDIRECT_URL = "homepage"
+# LOGIN_REDIRECT_URL = "homepage"
+# LOGIN_URL = 'login'
 
 
 # Internationalization
@@ -166,7 +165,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-AUTH_USER_MODEL = "user_api.AppUser"
+AUTH_USER_MODEL = "users.User"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
