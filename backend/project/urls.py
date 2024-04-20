@@ -11,5 +11,6 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='docs'),
     path('users/', include('users.urls')),
     path('api/v0/', include('api_v0.urls')),
+    path('api/', include('api_user_auth.urls')),
     path('', HomeStub.as_view(), name='homepage'),
 ]
